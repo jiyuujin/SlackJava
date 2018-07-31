@@ -7,8 +7,9 @@ import test.message.Message;
 import java.io.IOException;
 
 public class Connect {
+
     // クラスフィールド
-    // Slack-bot Token
+    // BotTokenは定数として扱われるためfinal修飾子を指定
     private static final String botToken = "xoxb-294501866708-398667584307-LyQ7KyVOQ6PiOeqTY4Pi7TYS";
 
     public static void main(String[] args) throws IOException {
@@ -21,4 +22,5 @@ public class Connect {
 
         session.disconnect();
     }
+
 }

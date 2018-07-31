@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Message {
 
     // クラスフィールド
-    // チャンネル名
+    // チャンネル名は定数として扱われるためfinal修飾子を指定
     private static final String channelName = "general";
 
     /**
