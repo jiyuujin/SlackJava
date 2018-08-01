@@ -17,10 +17,21 @@ public class Connect {
 
         session.connect();
 
-        Message messageInfo = new Message();
-        messageInfo.getMessage(session);
+        // Connectインスタンスを作成する
+        Connect connect = new Connect();
+        // メッセージを送信する
+        connect.sendWithSession(session);
 
         session.disconnect();
+    }
+
+    /**
+     * メッセージを送信する
+     * @param session SlackSessionオブジェクト
+     */
+    private void sendWithSession(SlackSession session) {
+        Message message = new Message();
+        message.sendMessage(session);
     }
 
 }

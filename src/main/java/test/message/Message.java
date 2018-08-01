@@ -11,9 +11,9 @@ public class Message {
 
     /**
      * メッセージ送信
-     * @param session Slack用セッション
+     * @param session SlackSessionオブジェクト
      */
-    public void getMessage(SlackSession session) {
+    public void sendMessage(SlackSession session) {
         SlackChannel channel = session.findChannelByName(channelName);
         String message = "Hello World!";
         // generalチャンネルに送信する
