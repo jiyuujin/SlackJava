@@ -3,6 +3,7 @@ package test;
 import com.ullink.slack.simpleslackapi.*;
 import com.ullink.slack.simpleslackapi.impl.*;
 import test.message.Message;
+import test.util.Log;
 
 import java.io.IOException;
 
@@ -30,8 +31,16 @@ public class Connect {
      * @param session SlackSessionオブジェクト
      */
     private void sendWithSession(SlackSession session) {
+        // Messageインスタンスを作成する
         Message message = new Message();
-        message.sendMessage(session);
+        // メッセージを送信する
+        if (message.sendMessage(session)) {
+            // 成功した
+            Log.printLog(true);
+        } else {
+            // 失敗した
+            Log.printLog(false);
+        }
     }
 
 }

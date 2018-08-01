@@ -1,7 +1,6 @@
 package test.message;
 
 import com.ullink.slack.simpleslackapi.*;
-import java.io.IOException;
 
 public class Message {
 
@@ -12,13 +11,20 @@ public class Message {
     /**
      * メッセージ送信
      * @param session SlackSessionオブジェクト
+     * @return メッセージ送信に成功したか、失敗したか
      */
-    public void sendMessage(SlackSession session) {
+    public boolean sendMessage(SlackSession session) {
         SlackChannel channel = session.findChannelByName(channelName);
         String message = "Hello World!";
-        // generalチャンネルに送信する
-        session.sendMessage(channel, message);
-        System.out.println("送信しました: " + message);
+
+        try {
+            // generalチャンネルに送信する
+            session.sendMessage(channel, message);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
 }
