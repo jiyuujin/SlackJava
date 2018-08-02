@@ -18,29 +18,12 @@ public class Connect {
 
         session.connect();
 
-        // Connectインスタンスを作成する
-        Connect connect = new Connect();
+        // Sendインスタンスを作成する
+        Send send = new Send();
         // メッセージを送信する
-        connect.sendWithSession(session);
+        send.sendMessage(session);
 
         session.disconnect();
-    }
-
-    /**
-     * メッセージを送信する
-     * @param session SlackSessionオブジェクト
-     */
-    private void sendWithSession(SlackSession session) {
-        // Messageインスタンスを作成する
-        Message message = new Message();
-        // メッセージを送信する
-        if (message.sendMessage(session)) {
-            // 成功した
-            Log.printLog(true);
-        } else {
-            // 失敗した
-            Log.printLog(false);
-        }
     }
 
 }

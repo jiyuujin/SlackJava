@@ -9,11 +9,11 @@ public class Message {
     private static final String channelName = "general";
 
     /**
-     * メッセージ送信
+     * generalチャンネルにメッセージを送信する
      * @param session SlackSessionオブジェクト
      * @return メッセージ送信に成功したか、失敗したか
      */
-    public boolean sendMessage(SlackSession session) {
+    public boolean sendToGeneralChannel(SlackSession session) {
         SlackChannel channel = session.findChannelByName(channelName);
         String message = "Hello World!";
 
